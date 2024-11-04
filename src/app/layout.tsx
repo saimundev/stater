@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import {Poppins} from "next/font/google";
-import { ThemeProvider } from "@/components/themeProvider"
+import { Poppins } from "next/font/google";
+import { ThemeProvider } from "@/components/themeProvider";
 import "../styles/globals.css";
 import Header from "@/components/shared/Header";
 
 const poppins = Poppins({
-  weight:["500","700"],
-  subsets:["latin"],
-  variable:"--font-poppins"
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 
@@ -23,22 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} `}
-      >
-         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <div className="sticky top-0">
-          <Header/>
-        </div>
-       <div className="container mx-auto">
-       {children}
-       </div>
-       </ThemeProvider>
+      <body className={`${poppins.variable} `}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="sticky top-0">
+            <Header />
+          </div>
+          <div className="container mx-auto">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
