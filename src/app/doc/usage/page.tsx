@@ -15,6 +15,7 @@ import {
   Modal,
   ModalCancelButton,
   ModalDescription,
+  ModalDivider,
   ModalFooter,
   ModalHeader,
   ModalSuccessButton,
@@ -65,8 +66,8 @@ const UsagePage = () => {
           {simpleStartCode}
         </SyntaxHighlighter>
         <Modal open={simpleOpen} onClose={() => setSimpleOpen(false)}>
-          <h1 className="text-xl font-semibold mb-4">This is a Modal Title</h1>
-          <p>
+          <h1 className="text-xl font-semibold mb-4 dark:text-black">This is a Modal Title</h1>
+          <p className="dark:text-black">
             Please review the details of your action before confirming. This
             operation is crucial and cannot be reversed once executed. Ensure
             that all information presented is accurate and aligns with your
@@ -367,7 +368,7 @@ const UsagePage = () => {
       </div>
 
       <div className="mt-20">
-        <h1 className="modal-type-title">Custom CSS Modal</h1>
+        <h1 className="modal-type-title">Modal With Divider Component</h1>
 
         <SyntaxHighlighter language="javascript" style={dracula}>
           {modalWithButtonStartCode}
@@ -380,10 +381,12 @@ const UsagePage = () => {
           <ModalHeader>
             <ModalTitle>This is a Modal Title</ModalTitle>
           </ModalHeader>
+          <ModalDivider />
           <ModalDescription>
             Provide a concise and informative description that effectively
             communicates the purpose of the modal to the user.
           </ModalDescription>
+          <ModalDivider />
           <ModalFooter>
             <ModalCancelButton onClose={() => setCustomCssModalOpen(false)}>
               Cancel

@@ -13,7 +13,7 @@ const page = () => {
         <h1 className="text-4xl font-black py-2">
           Get started with React Beautiful Modals
         </h1>
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-700 dark:text-white/90">
           A lightweight, customizable modal component for web applications. Easy
           to integrate, responsive, and supports user interactions with
           customizable responses. Ideal for overlays, alerts, and dialogs

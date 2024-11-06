@@ -11,7 +11,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="py-4 border-b border-gray-200 bg-white/75 backdrop-blur dark:bg-black/75 dark:border-gray-600">
+    <div className="py-4 border-b border-gray-200 bg-white/75 backdrop-blur dark:bg-black/75 dark:border-gray-600 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="">LOGO</div>
         <div className="flex gap-4">
