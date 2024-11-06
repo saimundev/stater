@@ -65,11 +65,12 @@ export const Modal = ({
       <div style={{ position: "relative" }}>
         <ModalContent
           size={size}
-          children={children}
           open={open}
           animationType={animationType}
           width={width}
-        />
+        >
+          {children}
+        </ModalContent>
         <svg
           onClick={onClose}
           style={{
@@ -118,7 +119,7 @@ const ModalContent = ({
         e.stopPropagation();
       }}
     >
-      <div>{children}</div>
+      {children}
     </div>
   );
 };

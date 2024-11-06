@@ -8,6 +8,7 @@ import {
   modalWithButtonStartCode,
   simpleStartCode,
 } from "@/components/ExampleCode";
+import MoreInfo from "@/components/MoreInfo";
 import NextPage from "@/components/NextPage";
 import PrevPage from "@/components/PrevPage";
 import {
@@ -20,14 +21,6 @@ import {
   ModalTitle,
 } from "@/components/modal/Modal";
 import { Button } from "@/components/ui/button";
-import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import MoreNifo from "@/components/MoreNifo";
-import MoreInfo from "@/components/MoreInfo";
-import { ArrowLeftIcon, Frown } from "lucide-react";
-import { BiLeftArrow } from "react-icons/bi";
 import {
   Select,
   SelectContent,
@@ -35,8 +28,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Frown } from "lucide-react";
+import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const page = () => {
+const UsagePage = () => {
   const [simpleOpen, setSimpleOpen] = useState(false);
   const [componentModalOpen, setComponentOpen] = useState(false);
   const [buttonModalOpen, setButtonModalOpen] = useState(false);
@@ -142,7 +139,10 @@ const page = () => {
           >
             Open Modal
           </Button>
-          <Select value={size} onValueChange={(value) => setSize(value as any)}>
+          <Select
+            value={size}
+            onValueChange={(value) => setSize(value as "lg" | "md" | "sm")}
+          >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Size" />
             </SelectTrigger>
@@ -187,7 +187,9 @@ const page = () => {
             <div className="flex justify-between items-center">
               <Select
                 value={buttonSize}
-                onValueChange={(value) => setButtonSize(value as any)}
+                onValueChange={(value) =>
+                  setButtonSize(value as "lg" | "md" | "sm")
+                }
               >
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Change Button Size" />
@@ -201,7 +203,17 @@ const page = () => {
 
               <Select
                 value={buttonColor}
-                onValueChange={(value) => setButtonColor(value as any)}
+                onValueChange={(value) =>
+                  setButtonColor(
+                    value as
+                      | "primary"
+                      | "secondary"
+                      | "info"
+                      | "error"
+                      | "success"
+                      | "warning"
+                  )
+                }
               >
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Change Button Color" />
@@ -265,7 +277,11 @@ const page = () => {
           </Button>
           <Select
             value={animationType}
-            onValueChange={(value) => setANimationType(value as any)}
+            onValueChange={(value) =>
+              setANimationType(
+                value as "fade" | "zoom" | "slide-up" | "slide-down"
+              )
+            }
           >
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Size" />
@@ -393,4 +409,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default UsagePage;
